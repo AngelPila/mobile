@@ -78,41 +78,39 @@ export const Profile: React.FC<ProfileProps> = ({ onLogout, userRole }) => {
     <IonContent className="bg-gray-50">
       <div className="space-y-4 p-4 pb-20">
         {/* Card de Perfil */}
-        <IonCard className="bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg">
-          <IonCardContent className="pt-6 pb-6">
-            <div className="flex items-start justify-between mb-6">
-              <div className="flex items-center gap-4">
-                <div className="text-6xl">{getRoleIcon()}</div>
-                <div>
-                  <h2 className="text-2xl font-bold">{MOCK_USER.name}</h2>
-                  <p className="text-blue-100 text-sm mt-1">
-                    {getRoleLabel()}
-                    {MOCK_USER.verified && (
-                      <span className="ml-2 text-xs bg-green-400 text-green-900 px-2 py-1 rounded-full">
-                        ✓ Verificado
-                      </span>
-                    )}
-                  </p>
-                </div>
+        <IonCard className="bg-gradient-to-br from-blue-600 to-blue-700 text-white shadow-lg m-0">
+          <IonCardContent className="pt-8 pb-8">
+            <div className="flex flex-col md:flex-row items-center md:items-start gap-6 mb-6">
+              <div className="text-8xl flex-shrink-0">{getRoleIcon()}</div>
+              <div className="flex-1 text-center md:text-left">
+                <h2 className="text-3xl font-bold">{MOCK_USER.name}</h2>
+                <p className="text-blue-100 text-base mt-2 font-semibold">
+                  {getRoleLabel()}
+                  {MOCK_USER.verified && (
+                    <span className="ml-3 text-xs bg-green-400 text-green-900 px-3 py-1 rounded-full inline-block">
+                      ✓ Verificado
+                    </span>
+                  )}
+                </p>
               </div>
             </div>
 
             {/* Info de Perfil */}
-            <div className="space-y-3 bg-blue-500 bg-opacity-30 rounded-lg p-4">
-              <div className="flex items-center gap-2 text-sm">
-                <span>📧</span>
-                <span>{MOCK_USER.email}</span>
+            <div className="space-y-3 bg-blue-500 bg-opacity-30 rounded-lg p-5">
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-lg">📧</span>
+                <span className="break-all">{MOCK_USER.email}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <span>📱</span>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-lg">📱</span>
                 <span>{MOCK_USER.phone}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <span>📍</span>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-lg">📍</span>
                 <span>{MOCK_USER.location}</span>
               </div>
-              <div className="flex items-center gap-2 text-sm">
-                <span>📅</span>
+              <div className="flex items-center gap-3 text-sm">
+                <span className="text-lg">📅</span>
                 <span>Miembro desde {joinDateFormatted}</span>
               </div>
             </div>

@@ -141,32 +141,33 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
       <div className="sticky top-4 right-4 z-10 flex justify-end">
         <button
           onClick={() => setIsModalOpen(true)}
-          className="w-14 h-14 rounded-full gradient-agricultor text-white shadow-lg hover:shadow-xl active:scale-95 transition-all flex items-center justify-center"
+          className="w-16 h-16 rounded-full gradient-agricultor text-white shadow-lg hover:shadow-xl active:scale-95 transition-all flex items-center justify-center border-4 border-white"
         >
-          <IonIcon icon={add} style={{ fontSize: '28px' }} />
+          <IonIcon icon={add} style={{ fontSize: '32px' }} />
         </button>
       </div>
 
       {/* Filtros */}
-      <div className="p-4 bg-white border-b border-gray-200 sticky top-0 z-10">
+      <div className="p-4 bg-white border-b border-gray-200 sticky top-0 z-10 shadow-md">
+        <p className="text-sm font-semibold text-gray-700 mb-3">Filtrar por tipo:</p>
         <IonSegment value={filterType} onIonChange={(e) => setFilterType(e.detail.value as any)} className="bg-gray-100 rounded-lg">
-          <IonSegmentButton value="all">
+          <IonSegmentButton value="all" className="text-xs">
             <IonLabel className="font-semibold">Todos</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="sale">
+          <IonSegmentButton value="sale" className="text-xs">
             <IonLabel className="font-semibold">🌾 Ventas</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="purchase">
+          <IonSegmentButton value="purchase" className="text-xs">
             <IonLabel className="font-semibold">🛒 Compras</IonLabel>
           </IonSegmentButton>
-          <IonSegmentButton value="investment">
+          <IonSegmentButton value="investment" className="text-xs">
             <IonLabel className="font-semibold">💰 Inv.</IonLabel>
           </IonSegmentButton>
         </IonSegment>
       </div>
 
       {/* Posts */}
-      <div className="p-4 space-y-4 pb-20">
+      <div className="p-4 space-y-5 pb-20">
         {filteredPosts.length === 0 ? (
           <EmptyState 
             icon="📭" 
@@ -175,18 +176,18 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
           />
         ) : (
           filteredPosts.map((post, idx) => (
-            <IonCard key={post.id} className="card-elevated animate-slide-in-up" style={{ animationDelay: `${idx * 50}ms` }}>
-              <IonCardContent className="pt-4">
+            <IonCard key={post.id} className="card-elevated animate-slide-in-up border border-gray-100 hover:shadow-lg transition-all" style={{ animationDelay: `${idx * 50}ms` }}>
+              <IonCardContent className="pt-5 pb-4">
                 {/* Header del post */}
-                <div className="flex justify-between items-start mb-3">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xl">
+                <div className="flex justify-between items-start mb-4">
+                  <div className="flex-1">
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl">
                         {post.authorRole === 'agricultor' ? '👨‍🌾' :
                          post.authorRole === 'comprador' ? '🛒' : '💰'}
                       </span>
                       <div>
-                        <p className="font-semibold text-gray-800">{post.author}</p>
+                        <p className="font-bold text-gray-800 text-base">{post.author}</p>
                         <p className="text-xs text-gray-500">{getTimeAgo(post.createdAt)}</p>
                       </div>
                     </div>
@@ -195,10 +196,10 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
                 </div>
 
                 {/* Contenido del post */}
-                <p className="text-gray-700 mb-4 leading-relaxed">{post.content}</p>
+                <p className="text-gray-700 mb-4 leading-relaxed text-base">{post.content}</p>
 
                 {/* Acciones */}
-                <div className="flex gap-4 pt-3 border-t border-gray-100 text-gray-600">
+                <div className="flex gap-2 pt-4 border-t border-gray-100 text-gray-600">
                   <IonButton
                     fill="clear"
                     size="small"
@@ -211,12 +212,12 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
                         fill: likedPosts.has(post.id) ? 'currentColor' : 'none'
                       }}
                     />
-                    <span className="ml-2 text-xs">{post.likes}</span>
+                    <span className="ml-2 text-xs font-semibold">{post.likes}</span>
                   </IonButton>
 
                   <IonButton fill="clear" size="small">
                     <IonIcon icon={chatbubble} />
-                    <span className="ml-2 text-xs">{post.comments}</span>
+                    <span className="ml-2 text-xs font-semibold">{post.comments}</span>
                   </IonButton>
 
                   <IonButton fill="clear" size="small">
@@ -231,9 +232,9 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
 
       {/* Modal para crear post */}
       <IonModal isOpen={isModalOpen} onDidDismiss={() => setIsModalOpen(false)}>
-        <IonHeader className="bg-blue-600 text-white">
+        <IonHeader className="bg-blue-600 text-white shadow-lg">
           <IonToolbar className="bg-transparent">
-            <IonTitle>Nuevo Post</IonTitle>
+            <IonTitle className="font-bold text-lg">Compartir en la Red</IonTitle>
             <IonButton
               slot="end"
               fill="clear"
@@ -246,43 +247,46 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
         </IonHeader>
 
         <IonContent>
-          <div className="p-4 space-y-4">
+          <div className="p-5 space-y-5">
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
+              <label className="block text-sm font-bold text-gray-800 mb-3">
                 Tipo de Post
               </label>
               <IonSegment 
                 value={newPostType} 
                 onIonChange={(e) => setNewPostType(e.detail.value as PostType)}
+                className="bg-gray-100"
               >
-                <IonSegmentButton value="sale">
-                  <IonLabel>🌾 Venta</IonLabel>
+                <IonSegmentButton value="sale" className="text-xs">
+                  <IonLabel className="font-semibold">🌾 Venta</IonLabel>
                 </IonSegmentButton>
-                <IonSegmentButton value="purchase">
-                  <IonLabel>🛒 Compra</IonLabel>
+                <IonSegmentButton value="purchase" className="text-xs">
+                  <IonLabel className="font-semibold">🛒 Compra</IonLabel>
                 </IonSegmentButton>
-                <IonSegmentButton value="investment">
-                  <IonLabel>💰 Inversión</IonLabel>
+                <IonSegmentButton value="investment" className="text-xs">
+                  <IonLabel className="font-semibold">💰 Inv.</IonLabel>
                 </IonSegmentButton>
-                <IonSegmentButton value="announcement">
-                  <IonLabel>📢 Aviso</IonLabel>
+                <IonSegmentButton value="announcement" className="text-xs">
+                  <IonLabel className="font-semibold">📢 Aviso</IonLabel>
                 </IonSegmentButton>
               </IonSegment>
             </div>
 
             <div>
-              <label className="block text-sm font-semibold text-gray-700 mb-2">
-                Contenido
+              <label className="block text-sm font-bold text-gray-800 mb-3">
+                ¿Qué tienes que compartir?
               </label>
               <IonTextarea
-                placeholder="Cuéntanos algo..."
+                placeholder="Cuéntanos algo... (mínimo 10 caracteres)"
                 value={newPostContent}
                 onIonChange={(e) => setNewPostContent(e.detail.value || '')}
                 rows={6}
+                className="bg-gray-50 rounded-lg border border-gray-300"
               />
+              <p className="text-xs text-gray-500 mt-2">{newPostContent.length} caracteres</p>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-3">
               <IonButton 
                 fill="outline" 
                 onClick={() => setIsModalOpen(false)}
@@ -295,6 +299,7 @@ export const CommunityFeed: React.FC<CommunityFeedProps> = ({ userRole }) => {
                 onClick={handleCreatePost}
                 disabled={!newPostContent.trim()}
                 className="flex-1"
+                fill="solid"
               >
                 Publicar
               </IonButton>

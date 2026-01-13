@@ -31,58 +31,59 @@ export const AgroScoreGauge: React.FC<AgroScoreGaugeProps> = ({
     glow = 'shadow-yellow-500/20';
   }
 
-  const sizeClasses = size === 'small' ? 'w-24 h-24' : 'w-32 h-32';
-  const textSizeClasses = size === 'small' ? 'text-2xl' : 'text-4xl';
+  const sizeClasses = size === 'small' ? 'w-32 h-32' : 'w-48 h-48';
+  const textSizeClasses = size === 'small' ? 'text-3xl' : 'text-5xl';
 
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center gap-6">
       <div className={`relative ${sizeClasses} flex items-center justify-center drop-shadow-lg ${glow}`}>
         {/* SVG Gauge */}
         <svg
           viewBox="0 0 100 100"
           className="w-full h-full transform -rotate-90"
+          style={{ filter: 'drop-shadow(0 4px 12px rgba(0,0,0,0.15))' }}
         >
           {/* Fondo del gauge */}
           <circle
             cx="50"
             cy="50"
-            r="45"
+            r="40"
             fill="none"
             stroke="#e5e7eb"
-            strokeWidth="8"
+            strokeWidth="6"
           />
           {/* Gauge de progreso con animación */}
           <circle
             cx="50"
             cy="50"
-            r="45"
+            r="40"
             fill="none"
             stroke={color}
-            strokeWidth="8"
-            strokeDasharray={`${(percentage / 100) * 282.7} 282.7`}
+            strokeWidth="6"
+            strokeDasharray={`${(percentage / 100) * 251.3} 251.3`}
             strokeLinecap="round"
             style={{ 
               transition: 'stroke-dasharray 0.5s ease',
-              filter: 'drop-shadow(0 0 8px rgba(0,0,0,0.1))'
+              filter: 'drop-shadow(0 0 6px rgba(0,0,0,0.2))'
             }}
           />
         </svg>
         
         {/* Texto central */}
-        <div className="absolute flex flex-col items-center">
-          <span className={`${textSizeClasses} font-bold`} style={{ color }}>
+        <div className="absolute flex flex-col items-center gap-1">
+          <span className={`${textSizeClasses} font-bold leading-none`} style={{ color }}>
             {score}
           </span>
-          <span className="text-xs text-gray-500">/{maxScore}</span>
+          <span className="text-sm text-gray-500 font-semibold">/{maxScore}</span>
         </div>
       </div>
 
       {showLabel && (
-        <div className="mt-4 text-center">
-          <p className="text-sm font-bold" style={{ color }}>
+        <div className="text-center">
+          <p className="text-lg font-bold" style={{ color }}>
             {qualityText}
           </p>
-          <p className="text-xs text-gray-600 mt-1">
+          <p className="text-sm text-gray-600 mt-2">
             {percentage.toFixed(1)}% de confiabilidad
           </p>
         </div>

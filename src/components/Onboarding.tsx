@@ -66,19 +66,21 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
 
   if (slide < 3) {
     return (
-      <IonContent className="ion-padding animate-fade-in" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
-        <div className="h-full flex flex-col justify-between pt-16 pb-16">
-          <div className="text-center">
-            <div className="text-7xl mb-8 animate-slide-in-down">{currentSlide.emoji}</div>
-            <h1 className="text-5xl font-bold text-slate-900 mb-3 animate-slide-in-up">
-              {currentSlide.title}
-            </h1>
-            <p className="text-xl font-semibold text-blue-600 mb-6 animate-slide-in-up">
-              {currentSlide.subtitle}
-            </p>
-            <p className="text-gray-700 text-lg leading-relaxed max-w-md mx-auto animate-slide-in-up">
-              {currentSlide.description}
-            </p>
+      <IonContent className="animate-fade-in" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
+        <div className="min-h-screen flex flex-col justify-between items-center p-6">
+          <div className="flex-1 flex flex-col justify-center items-center w-full max-w-md">
+            <div className="text-center">
+              <div className="text-7xl mb-8 animate-slide-in-down">{currentSlide.emoji}</div>
+              <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-3 animate-slide-in-up">
+                {currentSlide.title}
+              </h1>
+              <p className="text-lg md:text-xl font-semibold text-blue-600 mb-6 animate-slide-in-up">
+                {currentSlide.subtitle}
+              </p>
+              <p className="text-gray-700 text-base md:text-lg leading-relaxed animate-slide-in-up">
+                {currentSlide.description}
+              </p>
+            </div>
           </div>
 
           <div className="flex justify-center gap-2 mb-8">
@@ -92,7 +94,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
             ))}
           </div>
 
-          <div className="flex justify-between gap-4">
+          <div className="flex justify-between gap-4 w-full max-w-md">
             <IonButton
               fill="outline"
               onClick={() => setSlide(Math.max(0, slide - 1))}
@@ -117,13 +119,13 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
   }
 
   return (
-    <IonContent className="ion-padding animate-fade-in" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
-      <div className="flex flex-col justify-between h-full pt-8 pb-8">
-        <div>
-          <h1 className="text-4xl font-bold text-slate-900 mb-2 text-center">
+    <IonContent className="animate-fade-in" style={{ background: 'linear-gradient(135deg, #f8fafc 0%, #e0f2fe 100%)' }}>
+      <div className="min-h-screen flex flex-col justify-between items-center p-6 py-8">
+        <div className="w-full max-w-md flex-1 flex flex-col justify-center">
+          <h1 className="text-3xl md:text-4xl font-bold text-slate-900 mb-2 text-center">
             ¿Cuál es tu rol?
           </h1>
-          <p className="text-gray-600 text-center mb-12 text-lg">
+          <p className="text-gray-600 text-center mb-10 text-base md:text-lg">
             Selecciona el rol que mejor te describe para personalizar tu experiencia
           </p>
 
@@ -162,7 +164,7 @@ export const Onboarding: React.FC<OnboardingProps> = ({ onComplete }) => {
           </div>
         </div>
 
-        <div className="flex gap-4">
+        <div className="flex gap-4 w-full max-w-md">
           <IonButton
             fill="outline"
             onClick={() => setSlide(2)}

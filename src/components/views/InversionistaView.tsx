@@ -128,35 +128,35 @@ export const InversionistaView: React.FC<InversionistaViewProps> = ({ onShowChat
 
   return (
     <IonContent className="bg-gradient-to-b from-blue-50 to-white">
-      <div className="space-y-4 p-4 pb-20">
+      <div className="space-y-5 p-4 pb-20">
         {/* Saludo */}
-        <div className="gradient-inversionista text-white rounded-2xl p-6 shadow-lg animate-slide-in-down">
-          <h2 className="text-3xl font-bold">Panel de Inversión 💼</h2>
-          <p className="text-blue-100 mt-2 font-semibold">Oportunidades agrícolas verificadas y rentables</p>
+        <div className="gradient-inversionista text-white rounded-3xl p-8 shadow-lg animate-slide-in-down">
+          <h2 className="text-4xl font-bold mb-2">Panel de Inversión 💼</h2>
+          <p className="text-blue-100 text-base">Oportunidades agrícolas verificadas y rentables</p>
         </div>
 
         {/* Cartera Resumen */}
-        <IonCard className="card-elevated bg-gradient-to-br from-blue-50 to-cyan-50">
+        <IonCard className="card-elevated bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
           <IonCardContent>
-            <h3 className="text-lg font-bold text-slate-900 mb-4">📊 Tu Cartera</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-6">📊 Tu Cartera</h3>
             <IonGrid className="p-0">
               <IonRow>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-lg p-3">
-                    <p className="text-blue-600 text-sm font-semibold">Invertido</p>
-                    <p className="text-2xl font-bold text-slate-900 mt-1">$47.5K</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-blue-100 shadow-sm\">
+                    <p className="text-blue-600 text-xs font-bold\">Invertido</p>
+                    <p className="text-2xl font-bold text-slate-900 mt-2\">$47.5K</p>
                   </div>
                 </IonCol>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-lg p-3">
-                    <p className="text-blue-600 text-sm font-semibold">ROI Promedio</p>
-                    <p className="text-2xl font-bold text-green-600 mt-1">15.8%</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-green-100 shadow-sm\">
+                    <p className="text-green-600 text-xs font-bold\">ROI Promedio</p>
+                    <p className="text-2xl font-bold text-green-600 mt-2\">15.8%</p>
                   </div>
                 </IonCol>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-lg p-3">
-                    <p className="text-blue-600 text-sm font-semibold">Retorno Est.</p>
-                    <p className="text-2xl font-bold text-green-600 mt-1">$7.5K</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-emerald-100 shadow-sm\">
+                    <p className="text-emerald-600 text-xs font-bold\">Retorno Est.</p>
+                    <p className="text-2xl font-bold text-emerald-600 mt-2\">$7.5K</p>
                   </div>
                 </IonCol>
               </IonRow>
@@ -165,9 +165,9 @@ export const InversionistaView: React.FC<InversionistaViewProps> = ({ onShowChat
         </IonCard>
 
         {/* Gráfico de Tendencias (SVG simple) */}
-        <IonCard className="card-elevated bg-gradient-to-br from-slate-50 to-slate-100">
+        <IonCard className="card-elevated bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
           <IonCardContent>
-            <h3 className="text-lg font-bold text-slate-900 mb-4">📈 Tendencia de Mercado</h3>
+            <h3 className="text-xl font-bold text-slate-900 mb-6">📈 Tendencia de Mercado</h3>
             <svg
               viewBox="0 0 300 150"
               className="w-full h-auto"

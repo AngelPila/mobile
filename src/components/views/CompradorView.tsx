@@ -121,11 +121,11 @@ export const CompradorView: React.FC<CompradorViewProps> = ({ onShowChat }) => {
 
   return (
     <IonContent className="bg-gradient-to-b from-emerald-50 to-white">
-      <div className="space-y-4 p-4 pb-20">
+      <div className="space-y-5 p-4 pb-20">
         {/* Saludo */}
-        <div className="gradient-comprador text-white rounded-2xl p-6 shadow-lg animate-slide-in-down">
-          <h2 className="text-3xl font-bold">¡Bienvenido! 🛒</h2>
-          <p className="text-emerald-100 mt-2 font-semibold">Descubre productos verificados de agricultores de confianza</p>
+        <div className="gradient-comprador text-white rounded-3xl p-8 shadow-lg animate-slide-in-down">
+          <h2 className="text-4xl font-bold mb-2">¡Bienvenido! 🛒</h2>
+          <p className="text-emerald-100 text-base">Descubre productos verificados de agricultores de confianza</p>
         </div>
 
         {/* Buscador */}
@@ -133,19 +133,20 @@ export const CompradorView: React.FC<CompradorViewProps> = ({ onShowChat }) => {
           value={searchText}
           onIonChange={(e) => setSearchText(e.detail.value || '')}
           placeholder="🔍 Buscar productos o ubicación..."
-          className="bg-white rounded-xl shadow-md"
+          className="bg-white rounded-2xl shadow-md"
         />
 
         {/* Filtros por categoría */}
-        <div className="bg-white p-4 rounded-xl shadow-md">
+        <div className="bg-white p-4 rounded-2xl shadow-md border border-emerald-100">
+          <p className="text-sm font-semibold text-gray-700 mb-3">Filtrar por categoría:</p>
           <IonSegment 
             value={selectedCategory}
             onIonChange={(e) => setSelectedCategory(e.detail.value as string)}
             className="max-w-full"
           >
             {CATEGORIES.map(cat => (
-              <IonSegmentButton key={cat} value={cat}>
-                <IonLabel className="text-xs">{cat.charAt(0).toUpperCase() + cat.slice(1)}</IonLabel>
+              <IonSegmentButton key={cat} value={cat} className="text-xs">
+                <IonLabel>{cat.charAt(0).toUpperCase() + cat.slice(1)}</IonLabel>
               </IonSegmentButton>
             ))}
           </IonSegment>

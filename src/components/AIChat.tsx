@@ -113,20 +113,20 @@ export const AIChat: React.FC<AIChatProps> = ({ isOpen, onClose, userRole }) => 
       </IonHeader>
 
       <IonContent ref={contentRef} className="bg-gradient-to-b from-slate-50 to-white">
-        <div className="p-4 space-y-4">
+        <div className="p-4 space-y-4 min-h-screen flex flex-col">
           {messages.map((msg, index) => (
             <div
               key={msg.id}
               className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'} animate-slide-in-up`}
             >
               <div
-                className={`max-w-xs px-4 py-3 rounded-2xl shadow-md transition-all ${
+                className={`max-w-xs md:max-w-sm px-4 py-3 rounded-2xl shadow-md transition-all ${
                   msg.role === 'user'
                     ? `${getRoleColor()} text-white rounded-br-none`
                     : 'bg-white text-gray-800 border border-gray-200 rounded-bl-none'
                 }`}
               >
-                <p className="text-sm leading-relaxed break-words">{msg.content}</p>
+                <p className="text-sm leading-relaxed break-words whitespace-pre-wrap">{msg.content}</p>
                 <p className={`text-xs mt-2 font-semibold ${
                   msg.role === 'user' ? 'text-blue-100' : 'text-gray-500'
                 }`}>
@@ -146,11 +146,12 @@ export const AIChat: React.FC<AIChatProps> = ({ isOpen, onClose, userRole }) => 
               </div>
             </div>
           )}
+          <div className="flex-1" />
         </div>
       </IonContent>
 
       <IonFooter className="bg-white border-t border-gray-200 shadow-xl">
-        <div className="p-4 flex gap-2">
+        <div className="p-4 flex gap-2 max-w-full">
           <IonInput
             placeholder="💬 Escribe tu mensaje..."
             value={inputValue}
@@ -161,12 +162,12 @@ export const AIChat: React.FC<AIChatProps> = ({ isOpen, onClose, userRole }) => 
               }
             }}
             disabled={isLoading}
-            className="bg-gray-100 rounded-lg"
+            className="bg-gray-100 rounded-lg flex-1"
           />
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+            className={`px-4 py-2 rounded-lg font-semibold transition-all flex-shrink-0 ${
               !inputValue.trim() || isLoading
                 ? 'bg-gray-200 text-gray-400 cursor-not-allowed'
                 : 'bg-gradient-agricultor text-white hover:shadow-lg active:scale-95'
