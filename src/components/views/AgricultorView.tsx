@@ -22,6 +22,7 @@ import {
 import { add, close } from 'ionicons/icons';
 import { Crop, AgroScore } from '../../types';
 import { AgroScoreGauge, ProductCard, EmptyState } from '../ui/SharedComponents';
+import { ProfileHero } from '../ui/ProfileHero';
 
 // Mock data
 const MOCK_AGROSCORE: AgroScore = {
@@ -116,16 +117,19 @@ export const AgricultorView: React.FC<AgricultorViewProps> = ({ onShowChat }) =>
   };
 
   return (
-    <IonContent className="bg-gradient-to-b from-lime-50 to-white">
-      <div className="space-y-5 p-4 pb-20">
+    <IonContent fullscreen className="bg-gradient-to-b from-lime-50 to-white">
+      <div className="space-y-5 pb-20">
         {/* Saludo y resumen rápido */}
-        <div className="gradient-agricultor text-white rounded-3xl p-8 shadow-lg animate-slide-in-down">
-          <h2 className="text-4xl font-bold mb-4">¡Hola, Carlos! 👨‍🌾</h2>
+        <ProfileHero
+          gradientClassName="gradient-agricultor"
+          title="¡Hola, Carlos! 👨‍🌾"
+          titleClassName="mb-4"
+        >
           <div className="space-y-2">
             <p className="text-lg text-lime-100 font-semibold">Tu AgroScore: 979 / 1000 ⭐</p>
             <p className="text-lime-100 text-base">Clasificación: Excelente</p>
           </div>
-        </div>
+        </ProfileHero>
 
         {/* Card de AgroScore */}
         <IonCard 

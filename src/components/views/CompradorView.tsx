@@ -20,6 +20,7 @@ import {
 import { close, call, mail } from 'ionicons/icons';
 import { Product } from '../../types';
 import { ProductCard, AgroScoreGauge, EmptyState } from '../ui/SharedComponents';
+import { ProfileHero } from '../ui/ProfileHero';
 
 // Mock products
 const MOCK_PRODUCTS: Product[] = [
@@ -120,13 +121,15 @@ export const CompradorView: React.FC<CompradorViewProps> = ({ onShowChat }) => {
   };
 
   return (
-    <IonContent className="bg-gradient-to-b from-emerald-50 to-white">
-      <div className="space-y-5 p-4 pb-20">
+    <IonContent fullscreen className="bg-gradient-to-b from-emerald-50 to-white">
+      <div className="space-y-5 pb-20">
         {/* Saludo */}
-        <div className="gradient-comprador text-white rounded-3xl p-8 shadow-lg animate-slide-in-down">
-          <h2 className="text-4xl font-bold mb-2">¡Bienvenido! 🛒</h2>
-          <p className="text-emerald-100 text-base">Descubre productos verificados de agricultores de confianza</p>
-        </div>
+        <ProfileHero
+          gradientClassName="gradient-comprador"
+          title="¡Bienvenido! 🛒"
+          subtitle="Descubre productos verificados de agricultores de confianza"
+          subtitleClassName="text-emerald-100"
+        />
 
         {/* Buscador */}
         <IonSearchbar

@@ -20,6 +20,7 @@ import {
 import { close, chevronForward } from 'ionicons/icons';
 import { InvestmentProject } from '../../types';
 import { AgroScoreGauge, EmptyState } from '../ui/SharedComponents';
+import { ProfileHero } from '../ui/ProfileHero';
 
 // Mock projects
 const MOCK_PROJECTS: InvestmentProject[] = [
@@ -127,13 +128,15 @@ export const InversionistaView: React.FC<InversionistaViewProps> = ({ onShowChat
   };
 
   return (
-    <IonContent className="bg-gradient-to-b from-blue-50 to-white">
-      <div className="space-y-5 p-4 pb-20">
+    <IonContent fullscreen className="bg-gradient-to-b from-blue-50 to-white">
+      <div className="space-y-5 pb-20">
         {/* Saludo */}
-        <div className="gradient-inversionista text-white rounded-3xl p-8 shadow-lg animate-slide-in-down">
-          <h2 className="text-4xl font-bold mb-2">Panel de Inversión 💼</h2>
-          <p className="text-blue-100 text-base">Oportunidades agrícolas verificadas y rentables</p>
-        </div>
+        <ProfileHero
+          gradientClassName="gradient-inversionista"
+          title="Panel de Inversión 💼"
+          subtitle="Oportunidades agrícolas verificadas y rentables"
+          subtitleClassName="text-blue-100"
+        />
 
         {/* Cartera Resumen */}
         <IonCard className="card-elevated bg-gradient-to-br from-blue-50 to-cyan-50 border border-blue-200">
@@ -142,21 +145,21 @@ export const InversionistaView: React.FC<InversionistaViewProps> = ({ onShowChat
             <IonGrid className="p-0">
               <IonRow>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-xl p-4 border border-blue-100 shadow-sm\">
-                    <p className="text-blue-600 text-xs font-bold\">Invertido</p>
-                    <p className="text-2xl font-bold text-slate-900 mt-2\">$47.5K</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-blue-100 shadow-sm">
+                    <p className="text-blue-600 text-xs font-bold">Invertido</p>
+                    <p className="text-2xl font-bold text-slate-900 mt-2">$47.5K</p>
                   </div>
                 </IonCol>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-xl p-4 border border-green-100 shadow-sm\">
-                    <p className="text-green-600 text-xs font-bold\">ROI Promedio</p>
-                    <p className="text-2xl font-bold text-green-600 mt-2\">15.8%</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-green-100 shadow-sm">
+                    <p className="text-green-600 text-xs font-bold">ROI Promedio</p>
+                    <p className="text-2xl font-bold text-green-600 mt-2">15.8%</p>
                   </div>
                 </IonCol>
                 <IonCol size="4">
-                  <div className="text-center bg-white rounded-xl p-4 border border-emerald-100 shadow-sm\">
-                    <p className="text-emerald-600 text-xs font-bold\">Retorno Est.</p>
-                    <p className="text-2xl font-bold text-emerald-600 mt-2\">$7.5K</p>
+                  <div className="text-center bg-white rounded-xl p-4 border border-emerald-100 shadow-sm">
+                    <p className="text-emerald-600 text-xs font-bold">Retorno Est.</p>
+                    <p className="text-2xl font-bold text-emerald-600 mt-2">$7.5K</p>
                   </div>
                 </IonCol>
               </IonRow>
