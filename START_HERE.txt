@@ -1,0 +1,185 @@
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                  ║
+║                      🌾 BIENVENIDO A WAQI IONIC 🌾                            ║
+║                   (World Agricultural Quality Index)                           ║
+║                                                                                  ║
+║              Plataforma Agrícola Multiplataforma con Ionic                    ║
+║                                                                                  ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+¿CUÁL ES LA PRIMERA COSA QUE DEBO HACER?
+
+   1️⃣  Lee este archivo (START_HERE.txt)
+   2️⃣  Lee QUICK_START.md (30 segundos)
+   3️⃣  Ejecuta: npm run dev
+   4️⃣  ¡Disfruta WAQI!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+INSTALACIÓN (Primera vez)
+
+   cd /workspaces/mobile
+   npm install
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+EJECUTAR EN DESARROLLO
+
+   npm run dev
+   
+   ✓ Abrirá http://localhost:5173 automáticamente
+   ✓ Hot reload activado (cambios se actualizan automáticamente)
+   ✓ Devtools disponibles
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¿QUÉ VAS A VER?
+
+   1. Pantalla de Onboarding (3 slides)
+   2. Selecciona un rol:
+      👨‍🌾 Agricultor     - Gestiona cultivos y AgroScore
+      🛒 Comprador      - Compra productos agrícolas
+      💰 Inversionista  - Invierte en proyectos
+
+   3. Dashboard personalizado según tu rol
+   4. Navega usando las 4 pestañas en la parte inferior
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DOCUMENTACIÓN (en orden de lectura)
+
+   📄 QUICK_START.md           ← Lee primero (5 min)
+   📄 EXECUTION_GUIDE.md       ← Cómo correr la app
+   📄 WAQI_README.md           ← Descripción completa
+   📄 TECHNICAL_GUIDE.md       ← Arquitectura técnica
+   📄 ARCHITECTURE.md          ← Diagramas y flujos
+   📄 FILE_INDEX.md            ← Índice de archivos
+   📄 IMPLEMENTATION_SUMMARY.md ← Resumen de implementación
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¿QUIÉN CREÓ ESTO?
+
+   Versión original (React Native): @AngelPila/WAQI
+   Adaptación Ionic: Implementación completa con Capacitor
+   Código: ~5,000 líneas de TypeScript
+   Documentación: ~3,000 líneas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CARACTERÍSTICAS PRINCIPALES
+
+   ✅ Sistema AgroScore (0-1000)
+   ✅ 3 roles multiperfil
+   ✅ Marketplace de productos
+   ✅ Panel de inversiones
+   ✅ Red social de comunidad
+   ✅ Asistente IA conversacional
+   ✅ Responsive (móvil, tablet, web)
+   ✅ Compilación exitosa sin errores
+   ✅ 100% TypeScript
+   ✅ Listo para Capacitor (Android/iOS)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+TECNOLOGÍAS UTILIZADAS
+
+   📱 Framework:    Ionic 8.5 + React 19
+   🎨 UI:           Tailwind CSS + Ionicons
+   🔧 Lenguaje:     TypeScript 5.9
+   📦 Build:        Vite 5.0
+   🚀 Mobile:       Capacitor 8.0
+   🤖 IA:           Google Generative AI (Gemini)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+COMANDOS ÚTILES
+
+   # Desarrollo
+   npm run dev              Servidor con hot reload
+   npm run build            Compilar para producción
+   npm run preview          Ver build localmente
+   
+   # Testing
+   npm run test.unit        Tests unitarios
+   npm run test.e2e         Tests end-to-end
+   npm run lint             Análisis de código
+
+   # Mobile (después de npm run build)
+   npx cap build android    Compilar para Android
+   npx cap build ios        Compilar para iOS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DATOS INCLUIDOS PARA PRUEBA
+
+   Productos:
+   • Maíz Amarillo - $18.50/qq
+   • Cacao CCN51 - $150/qq
+   • Soya - $22/qq
+   • Banano - $8/caja
+
+   Proyectos:
+   • Expansión Bananera - ROI 12-15%
+   • Tecnificación Arrocera - ROI 16-20%
+   • Cacaotal Premium - ROI 18-25%
+
+   Agricultores:
+   • Finca La Esperanza (Score: 950)
+   • Agropecuaria San Juan (Score: 880)
+   • Hnos. Garzón (Score: 910)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PROBLEMAS COMUNES
+
+   ❌ "Port 5173 already in use"
+      → Ejecutar: lsof -ti :5173 | xargs kill -9
+
+   ❌ "Module not found"
+      → Ejecutar: rm -rf node_modules && npm install
+
+   ❌ Los cambios no aparecen
+      → Hard refresh: Ctrl+Shift+R (o Cmd+Shift+R en Mac)
+
+   ❌ Necesito limpiar datos guardados
+      → Console (F12): localStorage.clear()
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PRÓXIMOS PASOS
+
+   Inmediato:        npm run dev
+   Después de probar: npm run build
+   Para Mobile:      npx cap build android/ios
+   Para Producción:  Deployar en servidor web o app store
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¿NECESITAS AYUDA?
+
+   • Leer documentación: QUICK_START.md
+   • Ver arquitectura: ARCHITECTURE.md
+   • Problemas técnicos: TECHNICAL_GUIDE.md
+   • Ejecución: EXECUTION_GUIDE.md
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+¡YA ESTÁS LISTO!
+
+   Ejecuta:   npm run dev
+   Abre:      http://localhost:5173
+   ¡Disfruta!
+
+╔════════════════════════════════════════════════════════════════════════════════╗
+║                                                                                  ║
+║                          ¡Bienvenido a WAQI! 🌾                               ║
+║                    Una plataforma agrícola moderna y funcional                 ║
+║                                                                                  ║
+╚════════════════════════════════════════════════════════════════════════════════╝
+
+Versión: 1.0.0
+Tipo: Aplicación Web + Mobile Hybrida
+Tecnología: Ionic + Capacitor
+Estado: ✅ Completamente Funcional
+
